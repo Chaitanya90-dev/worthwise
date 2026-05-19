@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" role="img" aria-label="CashCove">
+  <defs>
+    <linearGradient id="grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e88e5"/>
+      <stop offset="100%" stop-color="#0f766e"/>
+    </linearGradient>
+  </defs>
+  <rect x="8" y="8" width="112" height="112" rx="28" fill="url(#grad)"/>
+  <path
+    fill="#ffffff"
+    d="M43 44c0-7.2 6-13 16-14.6V24h10v5.1c6 .8 11.5 3 16.1 6.3l-5.5 7.9c-3.3-2.4-6.9-4.1-10.6-4.9v11.3c11 2.6 16.4 7.4 16.4 15.7 0 8.9-6.7 15-17.1 16.3V104H59V81.6c-6.6-.9-12.8-3.5-17.9-7.5l5.8-7.8c3.5 3 7.6 5.1 12.1 6.1V59.8C47.7 57.3 43 52.5 43 44Zm26 28.7v9.3c5.3-.8 8.3-3.6 8.3-7.6 0-3.6-2.3-5.7-8.3-7.1Zm-10-21c0 3.3 2.5 5.5 7.9 6.8V49c-4.5.9-7.9 3.4-7.9 6.7Z"
+  />
+</svg>
