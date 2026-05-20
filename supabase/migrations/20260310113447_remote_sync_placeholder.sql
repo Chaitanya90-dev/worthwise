@@ -1,2 +1,0 @@
--- Placeholder migration to align local migration history with remote.
--- The corresponding remote migration was applied outside this repository.

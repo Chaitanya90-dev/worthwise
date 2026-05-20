@@ -1,17 +1,16 @@
-import { configureStore } from "@reduxjs/toolkit";
-import { apiSlice } from "../features/api/apiSlice";
-import authReducer from "../features/auth/authSlice";
-import offlineQueueReducer from "../features/offline/offlineQueueSlice";
+import { configureStore } from '@reduxjs/toolkit';
+import { baseApi } from '../features/api/baseApi';
+import financePreferencesReducer from '../features/settings/financePreferencesSlice';
 
 export const store = configureStore({
   reducer: {
-    auth: authReducer,
-    offlineQueue: offlineQueueReducer,
-    [apiSlice.reducerPath]: apiSlice.reducer,
+    financePreferences: financePreferencesReducer,
+    [baseApi.reducerPath]: baseApi.reducer,
   },
   middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(apiSlice.middleware),
+    getDefaultMiddleware().concat(baseApi.middleware),
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+

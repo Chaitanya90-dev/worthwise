@@ -1,16 +1,44 @@
+project_id = "worthwise"
 
-[functions.telegram-bot]
+[api]
 enabled = true
-verify_jwt = false
-import_map = "./functions/telegram-bot/deno.json"
-# Uncomment to specify a custom file path to the entrypoint.
-# Supported file extensions are: .ts, .js, .mjs, .jsx, .tsx
-entrypoint = "./functions/telegram-bot/index.ts"
-# Specifies static files to be bundled with the function. Supports glob patterns.
-# For example, if you want to serve static HTML pages in your function:
-# static_files = [ "./functions/telegram-bot/*.html" ]
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
 
-[functions.demo-login]
+[db]
+port = 54322
+shadow_port = 54320
+major_version = 15
+
+[db.seed]
+enabled = false
+
+[studio]
 enabled = true
-verify_jwt = false
-entrypoint = "./functions/demo-login/index.ts"
+port = 54323
+
+[inbucket]
+enabled = true
+port = 54324
+
+[storage]
+enabled = true
+file_size_limit = "50MiB"
+
+[auth]
+enabled = true
+site_url = "http://localhost:5173"
+additional_redirect_urls = ["http://127.0.0.1:5173"]
+jwt_expiry = 3600
+enable_signup = true
+enable_anonymous_sign_ins = false
+
+[analytics]
+enabled = false
+port = 54327
+backend = "postgres"
+
+[edge_runtime]
+enabled = false

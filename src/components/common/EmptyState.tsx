@@ -1,60 +1,30 @@
-import { Button, Paper, Stack, Text } from "@mantine/core";
-import { Link } from "react-router-dom";
-
-type EmptyStateAction = {
-  label: string;
-  to?: string;
-  onClick?: () => void;
-  variant?: "light" | "subtle" | "filled";
-  color?: string;
-};
+import { Button, Paper, Stack, Text, Title } from '@mantine/core';
+import type { ReactNode } from 'react';
 
 type EmptyStateProps = {
-  title?: string;
-  description: string;
-  action?: EmptyStateAction;
+  title: string;
+  message: string;
+  actionLabel?: string;
+  icon?: ReactNode;
 };
 
-export const EmptyState = ({ title, description, action }: EmptyStateProps) => {
+export function EmptyState({
+  title,
+  message,
+  actionLabel,
+  icon,
+}: EmptyStateProps) {
   return (
-    <Paper
-      withBorder
-      radius="md"
-      p="md"
-      style={{
-        background: "var(--surface-alt)",
-      }}
-    >
-      <Stack gap="xs" align="flex-start">
-        {title ? (
-          <Text size="sm" fw={700}>
-            {title}
-          </Text>
-        ) : null}
-        <Text size="sm" c="dimmed">
-          {description}
+    <Paper withBorder p="lg" radius="md">
+      <Stack gap="sm" align="flex-start">
+        {icon}
+        <Title order={3}>{title}</Title>
+        <Text c="dimmed" size="sm" maw={560}>
+          {message}
         </Text>
-        {action?.to ? (
-          <Button
-            component={Link}
-            to={action.to}
-            variant={action.variant ?? "light"}
-            color={action.color ?? "blue"}
-            size="xs"
-          >
-            {action.label}
-          </Button>
-        ) : action ? (
-          <Button
-            onClick={action.onClick}
-            variant={action.variant ?? "light"}
-            color={action.color ?? "blue"}
-            size="xs"
-          >
-            {action.label}
-          </Button>
-        ) : null}
+        {actionLabel ? <Button variant="light">{actionLabel}</Button> : null}
       </Stack>
     </Paper>
   );
-};
+}
+

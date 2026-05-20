@@ -3,13 +3,21 @@ node_modules/
 
 # Build output
 dist/
-build/
-.vite/
+coverage/
 
-# Local environment files
+# Local environment
 .env
 .env.*
 !.env.example
+
+# Local planning notes
+ROADMAP.md
+roadmap.md
+
+# Supabase local state
+.supabase/
+supabase/.branches/
+supabase/.temp/
 
 # Logs
 *.log
@@ -18,15 +26,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# OS/editor files
+# Editor and OS files
 .DS_Store
-Thumbs.db
 .idea/
 .vscode/
-
-# Netlify/Supabase local state
-.netlify/
-.supabase/
-
-# Coverage
-coverage/
